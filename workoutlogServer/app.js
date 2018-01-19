@@ -38,7 +38,8 @@ var User = sequelize.define('user', {
 // Matches the model defined
 // Doesn't drop the db
 User.sync();
-//User.sync({force: true})
+// Drops table
+// User.sync({force: true})
 app.use(bodyParser.json());
 
 app.post('/api/user', function(req, res){
