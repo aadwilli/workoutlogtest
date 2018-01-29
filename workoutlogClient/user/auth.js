@@ -1,10 +1,10 @@
 $(function(){
-    $extend(WorkoutLog, {
+    $.extend(WorkoutLog, {
         // signup method
         signup: function(){
             // username& password variables
-            var username = $("su_username").val();
-            var password = $("su_password").val();
+            var username = $("#su_username").val();
+            var password = $("#su_password").val();
             // user object
             var user = {
                 user: {
@@ -24,6 +24,8 @@ $(function(){
             signup.done(function(data){
                 if(data.sessionToken){
                     WorkoutLog.setAuthHeader(data.sessionToken);
+                    console.log("You did it!");
+                    console.log(data.sessionToken);
                 }
                 
                 $("#signup-modal").modal("hide");
